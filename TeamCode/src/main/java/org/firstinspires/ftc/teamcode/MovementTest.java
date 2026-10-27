@@ -86,10 +86,10 @@ public class MovementTest extends LinearOpMode {
 
         // Initialize the hardware variables. Note that the strings used here must correspond
         // to the names assigned during the robot configuration step on the DS or RC devices.
-        frontLeftDrive = hardwareMap.get(DcMotor.class, "FrontLeftMotor");
-        backLeftDrive = hardwareMap.get(DcMotor.class, "BackLeftMotor");
-        frontRightDrive = hardwareMap.get(DcMotor.class, "FrontRightMotor");
-        backRightDrive = hardwareMap.get(DcMotor.class, "BackRightMotor" +
+        frontLeftDrive = hardwareMap.get(DcMotor.class, "FrontLeft");
+        backLeftDrive = hardwareMap.get(DcMotor.class, "BackLeft");
+        frontRightDrive = hardwareMap.get(DcMotor.class, "FrontRight");
+        backRightDrive = hardwareMap.get(DcMotor.class, "BackRight" +
                 "");
 
         // ########################################################################################
@@ -103,7 +103,7 @@ public class MovementTest extends LinearOpMode {
         // Reverse the direction (flip FORWARD <-> REVERSE ) of any wheel that runs backward
         // Keep testing until ALL the wheels move the robot forward when you push the left joystick forward.
         frontLeftDrive.setDirection(DcMotor.Direction.FORWARD);
-        backLeftDrive.setDirection(DcMotor.Direction.REVERSE);
+        backLeftDrive.setDirection(DcMotor.Direction.FORWARD);
         frontRightDrive.setDirection(DcMotor.Direction.REVERSE);
         backRightDrive.setDirection(DcMotor.Direction.REVERSE);
 
@@ -121,7 +121,7 @@ public class MovementTest extends LinearOpMode {
             // POV Mode uses left joystick to go forward & strafe, and right joystick to rotate.
             double axial   = -gamepad1.left_stick_y;  // Note: pushing stick forward gives negative value
             double lateral =  gamepad1.left_stick_x;
-            double yaw     =  gamepad1.right_stick_x;
+            double yaw     =  -gamepad1.right_stick_x;
 
             // Combine the joystick requests for each axis-motion to determine each wheel's power.
             // Set up a variable for each drive wheel to save the power level for telemetry.
