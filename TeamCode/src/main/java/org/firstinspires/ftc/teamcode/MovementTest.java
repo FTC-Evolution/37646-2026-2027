@@ -121,7 +121,7 @@ public class MovementTest extends OpMode {
         // Ternary operator
         // Si B est appuy/ : activer le intake, sinon stop
         Intake.setPower(gamepad2.right_bumper ? 1.0 : 0);
-        //Intake.setPower(gamepad2.left_bumper ? -1.0 : 0);
+        Intake.setPower(gamepad2.left_bumper ? -1.0 : 0);
 
     }
 
