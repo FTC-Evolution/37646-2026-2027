@@ -54,7 +54,7 @@ import org.firstinspires.ftc.robotcore.external.navigation.AngleUnit;
 @TeleOp(name = "Robot: MovementTest", group = "Robot")
 
 public class MovementTest extends OpMode {
-    // This declares the four motors needed
+    // This declares the four motors needed test
     DcMotor FrontLeft;
     DcMotor FrontRight;
     DcMotor BackLeft;
